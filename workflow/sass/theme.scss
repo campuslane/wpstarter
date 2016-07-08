@@ -1,0 +1,91 @@
+body {
+  padding-top: 78px;
+  padding-bottom: 30px;
+  background-color: #f9f9f9;
+ 
+}
+
+pre {
+	background-color:#fff;
+}
+
+h1 {
+	margin:0;
+}
+.navbar-nav li a {
+	text-transform: uppercase;
+}
+
+.post-details {
+	text-transform: uppercase;
+	font-size:small;
+	font-weight:bold;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+// colors
+.primary-color {
+	color: $brand-primary;
+}
+
+a.navbar-brand {
+	font-size: $brand-size-px;
+}
+
+// wordpress
+
+header a {
+	text-decoration:none;
+	color: #666;
+}
+
+header a:hover {
+	text-decoration:none;
+}
+
+section h1 {
+	font-size: 28px;
+}
+
+article h2 {
+	font-size: 22px;
+}
+
+.sidebar-widget h3 {
+	font-size: 20px;
+	margin-bottom:0;
+	border-bottom: 1px solid #ccc;
+}
+
+.sidebar-widget ul {
+	list-style-type: none;
+	padding:0;
+	margin:0;
+}
+
+.sidebar-widget ul li {
+	
+}
+
+
+input.search-input {
+	@extend .form-control;
+}
+
+button.search-submit {
+	@extend .btn;
+	@extend .btn-primary;
+}
