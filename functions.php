@@ -65,26 +65,47 @@ if (function_exists('add_theme_support'))
 // HTML5 Blank navigation
 function html5blank_nav()
 {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+
+    $original = array(
+        'theme_location'  => 'header-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => ''
+        );
+
+    $new = array(
+        'theme_location'  => 'header-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'collapse navbar-collapse menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul>%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => ''
+        );
+
+
+	wp_nav_menu($new);
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -448,5 +469,9 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+
+// Bootstrap Navwalker
+require_once('classes/wp_bootstrap_navwalker.php');
 
 ?>
